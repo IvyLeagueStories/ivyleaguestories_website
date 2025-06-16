@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Now - Ivy League Stories</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="container">
+                <a href="index.html" class="navbar-logo">
+                    <img src="images/ivyleaguestories.jpg" alt="Ivy League Stories Logo">
+                </a>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="book-now.html" class="btn btn-primary active">Book Now</a></li>
+                </ul>
+                <div class="hamburger-menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="page-title-section book-now-title-section animate-on-scroll">
+            <div class="container text-center">
+                <h1>Schedule Your Consultation</h1>
+                <p class="subtitle">Take the first step towards crafting your compelling college application story. Select a time that works best for you below.</p>
+            </div>
+        </section>
+
+        <section class="calendly-embed-section animate-on-scroll">
+            <div class="container">
+                <!-- Calendly inline widget begin -->
+                <div class="calendly-inline-widget" data-url="https://calendly.com/michael-torto2/ivy-league-stories-consultation" style="min-width:320px;height:700px;"></div>
+                <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+                <!-- Calendly inline widget end -->
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer-section">
+        <div class="container">
+            <img src="images/ivyleaguestories.jpg" alt="Ivy League Stories Logo" class="footer-logo">
+            <p>&copy; <span id="current-year"></span> Ivy League Stories. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

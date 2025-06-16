@@ -1,0 +1,744 @@
+/* General Body Styles */
+body {
+    margin: 0;
+    font-family: 'Lato', sans-serif;
+    background-color: #ffffff; /* White background */
+    color: #1a1a1a; /* Very dark gray, almost black for text */
+    line-height: 1.6;
+    overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Typography */
+h1, h2, h3 {
+    font-family: 'Playfair Display', serif;
+    color: #000000; /* Black headings */
+}
+
+h1 {
+    font-size: 3.5rem; /* Larger for main title */
+    margin-bottom: 0.5em;
+}
+
+h2 {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 1.5em;
+    margin-top: 1em;
+}
+
+p.subtitle {
+    font-size: 1.5rem;
+    font-family: 'Playfair Display', serif;
+    color: #333333; /* Darker gray for subtitle */
+    margin-bottom: 1em;
+}
+
+/* Navbar */
+.navbar {
+    background-color: #000000; /* Black navbar */
+    color: #ffffff;
+    padding: 1em 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar-logo img {
+    max-height: 50px; /* Original logo size */
+    display: block;
+    filter: invert(0); /* Keep logo colors as is on black bg if needed, or adjust */
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links li {
+    margin-left: 25px;
+}
+
+.nav-links a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 700;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: #b0a060; /* Gold accent for hover/active */
+}
+
+.btn {
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: 700;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    display: inline-block;
+}
+
+.btn-primary {
+    background-color: #b0a060; /* Gold */
+    color: #000000;
+    border: 1px solid #b0a060;
+}
+
+.btn-primary:hover,
+.btn-primary.active {
+    background-color: #000000; /* Black background */
+    color: #b0a060; /* Gold text */
+    border-color: #b0a060; /* Gold border */
+}
+
+.btn-secondary {
+    background-color: #333333; /* Dark Gray */
+    color: #ffffff;
+    border: 1px solid #333333;
+    margin-top: 1em;
+}
+
+.btn-secondary:hover {
+    background-color: #000000;
+    color: #ffffff;
+}
+
+/* Hamburger Menu for Mobile */
+.hamburger-menu {
+    display: none;
+    cursor: pointer;
+}
+
+.hamburger-menu span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: #ffffff;
+    margin: 5px 0;
+    transition: all 0.3s ease;
+}
+
+/* Hero Section */
+.hero-section {
+    background-color: #f8f8f8; /* Light gray, almost white */
+    color: #000000;
+    text-align: center;
+    padding: 100px 0 60px; /* Adjust padding for fixed navbar & reduced height */
+    margin-top: 70px; /* Height of navbar */
+    min-height: 55vh; /* Reduced height */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Intro Section */
+.intro-logo img {
+    max-width: 250px; /* Further increased size for intro section logo */
+    height: auto;
+    display: block;
+    margin-bottom: 20px; /* Add some space below the logo if it's above text on small screens */
+}
+
+@media (min-width: 769px) {
+    .intro-logo img {
+        margin-bottom: 0; /* No bottom margin when side-by-side */
+        margin-right: 30px; /* Space between logo and text */
+    }
+}
+
+.intro-section {
+    padding: 60px 0;
+    background-color: #ffffff;
+}
+
+.content-split {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.intro-logo img {
+    max-width: 200px; /* Adjust as needed */
+    height: auto;
+}
+
+.intro-text {
+    flex: 1;
+}
+
+.intro-text p {
+    font-size: 1.25rem; /* Increased font size */
+}
+
+/* Founder Section */
+.founder-section {
+    padding: 60px 0;
+    background-color: #f0f0f0; /* Slightly darker gray */
+}
+
+.founder-section .container p {
+    font-size: 1.15rem; /* Larger font size */
+    font-weight: bold; /* Bold text */
+    max-width: 800px; /* Constrain width for readability */
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.7;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.founder-headshot {
+    width: 100%;
+    max-width: 750px; /* Increased headshot size */
+    height: auto;
+    border-radius: 15px; /* Rounded rectangle corners */
+    margin: 20px auto;
+    display: block;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+}
+
+/* Testimonials Section */
+.testimonial-slider-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 10px; /* Increased padding for wrapper */
+    margin-top: 20px;
+    position: relative; /* Context for any z-index on buttons if needed */
+}
+
+.testimonials-section {
+    padding: 60px 0;
+    background-color: #ffffff;
+}
+
+.testimonial-slider {
+    display: flex; /* For the cards inside */
+    overflow-x: hidden; /* Hide horizontal scrollbar, JS handles scrolling */
+    scroll-snap-type: x mandatory; /* Optional: for smoother native scroll if JS fails */
+    flex-grow: 1; /* Takes up space between buttons */
+    margin: 0 25px; /* CRITICAL: Space between slider content and arrow buttons */
+    padding: 20px 0; /* Vertical padding for the cards themselves */
+    background-color: #f9f9f9; /* Restore light background for slider area */
+    border-radius: 8px; /* Restore rounded corners for slider area */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08); /* Restore shadow for slider area */
+    position: relative; /* Ensure it's a positioning context if cards need it */
+}
+
+.testimonial-card {
+    display: none; /* Hidden by default */
+    padding: 20px;
+    box-sizing: border-box; /* Ensure padding doesn't add to width if min-width is 100% */
+}
+
+.testimonial-card.current-testimonial {
+    display: block; /* Visible card */
+    width: 100%; /* Occupy full width of slider */
+    box-sizing: border-box; /* Include padding in width */
+    flex-shrink: 0; /* Don't shrink */
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+.testimonial-card h3 {
+    margin-bottom: 10px;
+    font-size: 1.4rem;
+    text-align: center; /* Center the name */
+}
+
+.testimonial-card p { /* General style for all p in card, will be inherited or overridden */
+    white-space: normal;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    margin-bottom: 10px;
+    font-size: 1rem;
+    line-height: 1.5;
+    /* text-align will be inherited from .testimonial-card (center) by default */
+}
+
+/* Specific styling for the main testimonial quote paragraph */
+.testimonial-card > p:not(.accepted-to) {
+    display: block; /* Ensure block behavior */
+    width: 100%; /* Occupy full available width of parent's content box */
+    max-width: 100%; /* Further ensure it doesn't exceed parent's content box */
+    box-sizing: border-box; /* Include padding/border in its own width calculation if any were added */
+    text-align: left; /* Align quote text to the left for readability */
+    overflow: visible; /* Ensure text is not clipped if it miscalculates height/width */
+    /* Inherits white-space: normal and overflow-wrap: break-word from .testimonial-card p */
+}
+
+.testimonial-card p.accepted-to {
+    font-size: 0.9rem;
+    font-style: italic;
+    color: #555;
+    text-align: center; /* Center the 'Accepted to' line */
+}
+
+.slider-btn {
+    background-color: #000000;
+    color: #ffffff;
+    border: 1px solid #ffffff; /* Consider a slightly darker border for better definition on light backgrounds if needed */
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    z-index: 5; /* Ensure buttons are clickable, above slider cards if overlap occurs during animation */
+    transition: background-color 0.3s ease, color 0.3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0; /* Prevent buttons from shrinking */
+    padding: 0; /* Remove any default padding if it affects size */
+}
+
+.slider-btn:hover {
+    background-color: #b0a060; /* Gold hover */
+    color: #000000;
+    border-color: #b0a060;
+}
+
+/* Previous .prev-btn and .next-btn rules (which were empty or placeholders for absolute positioning) removed to clear lint errors. Flexbox now handles their positioning. */
+@media (max-width: 480px) { /* Adjusted breakpoint for more general mobile */
+    .testimonial-slider-wrapper {
+        padding: 0 5px; /* Reduce wrapper padding slightly */
+    }
+    .testimonial-slider {
+        margin: 0 10px; /* Reduce margin around slider for smaller screens */
+    }
+    .slider-btn {
+        width: 40px;
+        height: 40px;
+        font-size: 1.2rem;
+    }
+}
+
+/* FAQ Section */
+.faq-section {
+    padding: 60px 0;
+    background-color: #f0f0f0;
+}
+
+.faq-item {
+    margin-bottom: 15px;
+    border: 1px solid #cccccc; /* Light border for FAQ items */
+    border-radius: 5px;
+    background-color: #ffffff;
+}
+
+.faq-question {
+    background-color: transparent;
+    color: #000000;
+    border: none;
+    padding: 15px 20px;
+    width: 100%;
+    text-align: left;
+    font-size: 1.1rem;
+    font-weight: 700;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background-color 0.3s ease;
+}
+
+.faq-question:hover {
+    background-color: #f7f7f7;
+}
+
+.faq-icon {
+    font-size: 1.2rem;
+    transition: transform 0.3s ease;
+}
+
+.faq-answer {
+    padding: 0 20px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease-out, padding 0.5s ease-out; /* Smooth transition */
+    background-color: #ffffff;
+    border-top: 1px solid #eeeeee; /* Separator line */
+}
+
+.faq-answer p {
+    margin: 15px 0;
+    font-size: 1.1rem; /* Match question font size */
+}
+
+.faq-item.active .faq-answer {
+    max-height: 500px; /* Adjust as needed for content */
+    padding: 15px 20px;
+}
+
+.faq-item.active .faq-icon {
+    transform: rotate(180deg); /* Rotate arrow up */
+}
+
+/* Keyframes for animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Footer */
+.footer-section {
+    background-color: #000000;
+    color: #ffffff;
+    text-align: center;
+    padding: 40px 0;
+}
+
+.footer-logo {
+    height: 60px; /* Adjust as needed */
+    margin-bottom: 15px;
+    filter: invert(0); /* Keep logo colors */
+}
+
+.footer-section p {
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+/* Scroll Animations */
+.animate-on-scroll {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.animate-on-scroll.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* About Page Specific Styles */
+.about-hero-section {
+    padding: 40px 20px; /* Adjusted padding to accommodate larger image */
+    margin-top: 70px; /* Navbar height */
+    background-color: #f8f8f8; /* Light gray, consistent with home hero */
+}
+
+.about-hero-image {
+    display: block; /* To allow margin auto for centering */
+    width: 100%;
+    max-width: 90%; /* Span most of the width */
+    height: auto;
+    border-radius: 15px; /* Rounded rectangle, consistent with founder section on home */
+    border: 5px solid #ffffff;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+}
+
+.about-hero-section h1 {
+    font-size: 2.8rem;
+    color: #000000;
+}
+
+.about-content-section {
+    padding: 50px 0;
+    background-color: #ffffff;
+}
+
+.about-text p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    margin-bottom: 1.5em;
+    color: #333333;
+}
+
+.about-image-feature {
+    text-align: center;
+    margin-top: 40px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+}
+
+.about-image-feature img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+
+/* Services Page Specific Styles */
+.page-title-section {
+    padding: 60px 0;
+    margin-top: 70px; /* Navbar height */
+    background-color: #000000;
+    color: #ffffff;
+}
+
+.page-title-section h1 {
+    color: #ffffff;
+    font-size: 3rem;
+}
+
+.page-title-section .subtitle {
+    font-size: 1.25rem;
+    margin-bottom: 30px;
+    color: #f0f0f0;
+}
+
+.btn-large {
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.services-category {
+    padding: 50px 0;
+}
+
+.services-category:nth-child(odd) {
+    background-color: #f9f9f9;
+}
+
+.services-category h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 2.2rem;
+    color: #1a1a1a;
+}
+
+.service-item {
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 25px;
+    margin-bottom: 25px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.07);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+}
+
+.service-item h3 {
+    font-size: 1.6rem;
+    color: #000000;
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.service-description {
+    font-size: 1rem;
+    color: #555555;
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+.service-price {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #000000;
+    text-align: right;
+}
+
+.cta-section {
+    padding: 50px 0;
+    background-color: #f0f0f0; /* Light gray background */
+}
+
+.cta-section h2 {
+    font-size: 2rem;
+    margin-bottom: 25px;
+    color: #1a1a1a;
+}
+
+/* Contact Page Specific Styles */
+.contact-title-section {
+    background-color: #f8f8f8; /* Lighter background for contact title */
+    color: #1a1a1a;
+}
+
+.contact-title-section h1 {
+    color: #1a1a1a;
+}
+
+.contact-title-section .subtitle {
+    color: #555555;
+}
+
+.contact-info-section {
+    padding: 50px 0;
+    text-align: center;
+}
+
+.email-contact h2 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+}
+
+.email-contact p {
+    font-size: 1.1rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.contact-email-address {
+    font-size: 1.5rem !important; /* Make email address prominent */
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.contact-email-address a {
+    color: #007bff; /* Standard link blue, or your theme's primary color */
+    text-decoration: none;
+}
+
+.contact-email-address a:hover {
+    text-decoration: underline;
+}
+
+.social-media-section {
+    padding: 40px 0;
+    background-color: #f0f0f0; /* Light gray for social media section */
+}
+
+.social-media-section h2 {
+    margin-bottom: 30px;
+}
+
+.social-links-container {
+    display: flex;
+    flex-direction: column; /* Stack links vertically on small screens */
+    align-items: center;
+    gap: 20px;
+}
+
+.social-link {
+    display: inline-block;
+    padding: 12px 25px;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+    text-decoration: none;
+    color: #333333;
+    font-size: 1.1rem;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+    min-width: 280px; /* Ensure links have some width */
+    text-align: center;
+}
+
+.social-link:hover {
+    background-color: #000000;
+    color: #ffffff;
+    border-color: #000000;
+}
+
+/* Book Now Page Specific Styles */
+.book-now-title-section {
+    background-color: #000000; /* Dark background for booking title */
+    color: #ffffff;
+    padding-top: 60px;
+    padding-bottom: 40px;
+}
+
+.book-now-title-section h1 {
+    color: #ffffff;
+}
+
+.book-now-title-section .subtitle {
+    color: #f0f0f0;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.calendly-embed-section {
+    padding: 40px 0;
+    background-color: #ffffff; /* Clean white background for the embed area */
+}
+
+.calendly-inline-widget {
+    margin: 0 auto; /* Center the widget if its width is less than container */
+    border-radius: 8px; /* Optional: if you want to round the corners of the embed itself */
+    overflow: hidden; /* Helps if Calendly widget has its own shadows/borders you want to clip */
+}
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2.5rem;
+    }
+    p.subtitle {
+        font-size: 1.2rem;
+    }
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: #000000;
+        position: absolute;
+        top: 70px; /* Height of navbar */
+        left: 0;
+        padding: 1em 0;
+    }
+    .nav-links.active {
+        display: flex;
+    }
+    .nav-links li {
+        margin: 10px 0;
+        text-align: center;
+    }
+    .hamburger-menu {
+        display: block;
+    }
+    .hamburger-menu.active span:nth-child(1) {
+        transform: rotate(-45deg) translate(-5px, 6px);
+    }
+    .hamburger-menu.active span:nth-child(2) {
+        opacity: 0;
+    }
+    .hamburger-menu.active span:nth-child(3) {
+        transform: rotate(45deg) translate(-5px, -6px);
+    }
+    .content-split {
+        flex-direction: column;
+        text-align: center;
+    }
+    .intro-logo img {
+        margin-bottom: 20px;
+    }
+    .slider-btn {
+        padding: 8px 12px;
+        font-size: 1.2rem;
+    }
+    .prev-btn {
+        left: 5px;
+    }
+    .next-btn {
+        right: 5px;
+    }
+    .testimonial-slider {
+        padding: 20px;
+    }
+}
