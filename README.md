@@ -4,40 +4,64 @@ This is the official website for Ivy League Stories, a tutoring business special
 
 ## Project Structure
 
-- `index.html`: The main landing page.
-- `about.html`: The about page detailing Michael Torto's background.
-- `services.html`: Displays the tutoring services offered.
+- `index.html`: The main landing page with hero banner, mission statement, founder info, services overview, testimonials, and FAQ.
+- `about.html`: The about page detailing Michael Torto's background and qualifications.
+- `services.html`: Displays the tutoring services offered with detailed descriptions.
 - `contact.html`: Provides contact information and social media links.
-- `book-now.html`: Allows users to schedule consultations via an embedded Calendly widget.
-- `style.css`: Contains all the styling for the website.
-- `script.js`: Handles dynamic functionalities like the testimonial slider and FAQ dropdowns.
-- `images/`: This directory should contain all website images.
-    - `ivyleaguestories.jpeg`: The company logo.
-    - `Michael_headshot.jpeg`: Headshot of the founder.
+- `book-now.html`: Allows users to schedule consultations via an optimized Calendly widget.
+- `style.css`: Contains all the styling for the website with responsive design.
+- `script.js`: Handles dynamic functionalities like the testimonial slider, FAQ dropdowns, and animations.
+- `images/`: Contains all website images including:
+    - `ivyleaguestories.jpg`: The company logo used in the hero banner and navigation.
+    - `Michael_headshot.jpeg`: Professional headshot of the founder.
+    - `50successful.jpeg`: Book cover image.
+    - `icons/`: SVG icons for social media links.
 
 ## Setup
 
-1.  Clone this repository (or create the files as listed above).
-2.  Create an `images` folder in the root directory (`/Users/tamikabiawu/Desktop/ivyleaguestories/images/`).
-3.  Place the following images into the `images` folder:
-    *   `ivyleaguestories.jpeg` (your logo)
-    *   `Michael_headshot.jpeg` (Michael's headshot)
-    *   `50successful.jpeg` (Image of '50 Successful Harvard Application Essays' book)
-4.  Open `index.html` in your web browser to view the website.
+1. Clone this repository: `git clone https://github.com/TamiKabiawu007/ivyleaguestories.git`
+2. Ensure all images are in the `images/` folder including:
+   * `ivyleaguestories.jpg` (company logo)
+   * `Michael_headshot.jpeg` (founder's headshot)
+   * `50successful.jpeg` (book cover image)
+   * Social media icons in `images/icons/`
+3. Open `index.html` in your web browser to view the website locally.
+4. For development, you can run a local server: `python -m http.server` and visit http://localhost:8000
 
 ## Features
 
--   Responsive design for various screen sizes.
--   Modern black and white theme with gold accents.
--   Interactive testimonial slider.
--   Collapsible FAQ section.
--   Scroll-triggered animations for a dynamic user experience.
+- **Fully Responsive Design:** Optimized for all screen sizes from mobile to desktop.
+- **Modern Aesthetic:** Black and white theme with gold accents for a professional look.
+- **Interactive Elements:**
+  - Testimonial slider with client logos and quotes
+  - Collapsible FAQ section
+  - Smooth scroll-triggered animations
+- **Performance Optimized:**
+  - Lazy-loaded Calendly booking widget
+  - Local SVG icons for faster loading
+  - Properly sized and responsive images
+- **User Experience:**
+  - Clear call-to-action buttons
+  - Intuitive navigation
+  - Consistent styling across all pages
 
-## Future Development
+## Recent Improvements
 
--   About Page
--   Services Page
--   Contact Page
--   Booking System Integration
+- Enhanced responsive behavior for hero banner and founder images
+- Optimized Calendly widget loading with custom loading indicator
+- Fixed social media icon loading with local SVG files
+- Improved vertical alignment in navigation bar
+- Added proper image framing and responsive sizing
 
-This project uses HTML, CSS, and vanilla JavaScript.
+## Technology Stack
+
+This project is built with vanilla web technologies:
+- HTML5 for structure
+- CSS3 for styling with responsive design
+- Vanilla JavaScript for interactive elements
+- SVG icons for social media links
+- Calendly integration for appointment booking
+
+## License
+
+© 2025 Ivy League Stories. All rights reserved.

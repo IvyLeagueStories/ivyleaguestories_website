@@ -5,12 +5,22 @@ document.addEventListener('DOMContentLoaded', function() {
     const hamburgerMenu = document.querySelector('.hamburger-menu');
     const navLinks = document.querySelector('.nav-links');
 
+    let lastScrollTop = 0;
     window.addEventListener('scroll', () => {
-        if (window.scrollY > 50) {
-            navbar.style.backgroundColor = '#000000'; // Keep it black or change if needed
+        let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        if (scrollTop > lastScrollTop && scrollTop > navbar.offsetHeight) {
+            // Scroll Down
+            navbar.classList.add('navbar--hidden');
         } else {
-            navbar.style.backgroundColor = '#000000'; // Initial black
+            // Scroll Up
+            navbar.classList.remove('navbar--hidden');
         }
+        if (window.scrollY > 50) {
+            navbar.classList.add('scrolled');
+        } else {
+            navbar.classList.remove('scrolled');
+        }
+        lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; // For Mobile or negative scrolling
     });
 
     if (hamburgerMenu) {
@@ -54,31 +64,27 @@ document.addEventListener('DOMContentLoaded', function() {
     faqItems.forEach(item => {
         const questionButton = item.querySelector('.faq-question');
         const answer = item.querySelector('.faq-answer');
-        const icon = item.querySelector('.faq-icon');
 
         if (questionButton) {
             questionButton.addEventListener('click', () => {
-                const isActive = item.classList.contains('active');
-                // Close all other active items
-                // faqItems.forEach(otherItem => {
-                //     if (otherItem !== item) {
-                //         otherItem.classList.remove('active');
-                //         otherItem.querySelector('.faq-answer').style.maxHeight = null;
-                //         otherItem.querySelector('.faq-icon').innerHTML = '&#9662;'; // Down arrow
-                //     }
-                // });
-
+                // Toggle the clicked item
                 item.classList.toggle('active');
                 if (item.classList.contains('active')) {
                     answer.style.maxHeight = answer.scrollHeight + "px";
-                    icon.innerHTML = '&#9652;'; // Up arrow
                 } else {
                     answer.style.maxHeight = null;
-                    icon.innerHTML = '&#9662;'; // Down arrow
                 }
             });
         }
     });
+
+    // Open the first FAQ item by default
+    if (faqItems.length > 0) {
+        const firstFaqItem = faqItems[0];
+        const firstFaqAnswer = firstFaqItem.querySelector('.faq-answer');
+        firstFaqItem.classList.add('active');
+        firstFaqAnswer.style.maxHeight = firstFaqAnswer.scrollHeight + "px";
+    }
 
     // Footer: Current Year
     const currentYearSpan = document.getElementById('current-year');
