@@ -64,9 +64,8 @@ p.subtitle {
 
 .navbar .container {
     display: flex;
-    justify-content: flex-start;
+    justify-content: space-between;
     align-items: center;
-    position: relative;
     width: 100%;
 }
 
@@ -76,6 +75,14 @@ p.subtitle {
     filter: invert(0); /* Keep logo colors as is on black bg if needed, or adjust */
 }
 
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-left: 40px;
+}
+
 .nav-links {
     display: flex;
     list-style: none;
@@ -83,8 +90,6 @@ p.subtitle {
     padding: 0;
     gap: 20px;
     align-items: center; /* Ensure vertical centering */
-    margin-left: 40px; /* Add space after logo */
-    width: 100%; /* Take full width */
 }
 
 .nav-links li {
@@ -92,9 +97,8 @@ p.subtitle {
     margin-left: 0;
 }
 
-.nav-links li:last-child {
-    margin-left: auto; /* Push the last item (Book Now) to the right */
-    margin-right: 0; /* Remove right margin from last item */
+.book-now-container {
+    margin-left: auto; /* Push the Book Now button to the right */
 }
 
 .nav-links a {
@@ -754,10 +758,15 @@ p.subtitle {
 }
 
 .testimonial-card p.accepted-to {
-    font-size: 0.9rem;
+    font-size: 1.1rem;
     font-style: italic;
     color: #555;
     text-align: center; /* Center the 'Accepted to' line */
+}
+
+.testimonial-card p.accepted-to strong {
+    font-size: 1.1rem;
+    color: #333;
 }
 
 .testimonial-logo {
