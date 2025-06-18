@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="120px" height="24px" viewBox="0 0 120 24" version="1.1" xmlns="http://www.w3.org/2000/svg">
+    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <!-- First Star -->
+        <path d="M12,2 L15.09,8.26 L22,9.27 L17,14.14 L18.18,21.02 L12,17.77 L5.82,21.02 L7,14.14 L2,9.27 L8.91,8.26 L12,2 Z" fill="#C0A459"></path>
+        <!-- Second Star -->
+        <path d="M36,2 L39.09,8.26 L46,9.27 L41,14.14 L42.18,21.02 L36,17.77 L29.82,21.02 L31,14.14 L26,9.27 L32.91,8.26 L36,2 Z" fill="#C0A459"></path>
+        <!-- Third Star -->
+        <path d="M60,2 L63.09,8.26 L70,9.27 L65,14.14 L66.18,21.02 L60,17.77 L53.82,21.02 L55,14.14 L50,9.27 L56.91,8.26 L60,2 Z" fill="#C0A459"></path>
+        <!-- Fourth Star -->
+        <path d="M84,2 L87.09,8.26 L94,9.27 L89,14.14 L90.18,21.02 L84,17.77 L77.82,21.02 L79,14.14 L74,9.27 L80.91,8.26 L84,2 Z" fill="#C0A459"></path>
+        <!-- Fifth Star -->
+        <path d="M108,2 L111.09,8.26 L118,9.27 L113,14.14 L114.18,21.02 L108,17.77 L101.82,21.02 L103,14.14 L98,9.27 L104.91,8.26 L108,2 Z" fill="#C0A459"></path>
+    </g>
+</svg>
