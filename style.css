@@ -282,21 +282,22 @@ p.subtitle {
 @media (max-width: 768px) {
     .hero-section {
          position: relative;
-         height: auto; /* Let content determine height on mobile */
-         padding: 90px 0 140px; /* space for navbar + CTA buttons */
+         height: 100vh; /* full viewport height */
+         min-height: 500px;
+         padding: 0;
+         overflow: hidden;
     }
     
     .hero-banner-image {
-         position: relative; /* flow with the document */
-         top: auto;
-         left: auto;
-         transform: none;
-         width: 100%; /* full width */
-         height: auto; /* keep aspect ratio */
-         max-width: 100%;
-         object-fit: contain; /* prevent cropping */
+         position: absolute;
+         top: 0;
+         left: 0;
+         width: 100%;
+         height: 100%;
+         object-fit: cover; /* fill and crop sides */
+         object-position: center;
          border: none;
-         z-index: 1;
+         z-index: 0;
     }
     
     .hero-section .container {
@@ -320,6 +321,7 @@ p.subtitle {
         padding: 20px 25px;
         width: 85%;
         max-width: 350px;
+        margin-bottom: 10px; /* reduce gap to CTA */
     }
     
     .hero-section h1 {
@@ -336,7 +338,7 @@ p.subtitle {
     .hero-cta-box {
         padding: 15px 20px; /* Adjusted padding */
         max-width: 85%;
-        margin: 15px auto 0;
+        margin: 10px auto 0; /* smaller top margin */
     }
     
     .hero-cta-box .start-story-text {
@@ -347,6 +349,17 @@ p.subtitle {
     .hero-cta-box .btn {
         padding: 10px 20px;
         font-size: 0.9rem;
+    }
+    
+    /* ensure equal vertical padding for hero content */
+    .hero-content {
+        padding: 80px 20px; /* equal top and bottom */
+        height: 100%;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
     }
 }
 
@@ -555,13 +568,25 @@ p.subtitle {
 }
 
 @media (max-width: 768px) {
+    .content-split {
+        flex-direction: column; /* stack elements */
+        gap: 25px;
+        align-items: center;
+    }
+
+    .intro-logo,
+    .intro-text {
+        max-width: 100%;
+        flex: none;
+    }
+
     .intro-text {
         text-align: center;
     }
-    
+
     .intro-text .btn {
-        display: block;
-        margin: 0 auto;
+        display: inline-block;
+        margin: 15px auto 0;
         max-width: 200px;
     }
 }
