@@ -1193,16 +1193,27 @@ p.subtitle {
 
 .about-hero-image {
     display: block; /* To allow margin auto for centering */
-    width: 100%;
+    width: 100%; /* Let the image define its own width so the container wraps tightly */
     max-width: 90%; /* Span most of the width */
     height: auto;
     border-radius: 15px; /* Rounded rectangle, consistent with founder section on home */
-    border: 5px solid #ffffff;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    /* Removing border and shadow to ensure transparent PNG blends with background */
+    border: none;
+    box-shadow: none;
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 20px;
 }
+
+/* Ensure the about hero container shrinks to fit the image and centers its content */
+.about-hero-section .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 0; /* add desired top and bottom spacing */
+}
+
 
 .about-hero-section h1 {
     font-size: 2.8rem;
@@ -1257,7 +1268,7 @@ p.subtitle {
 
 .page-title-section h1 {
     color: #ffffff;
-    font-size: 3rem;
+    font-size: 2rem; /* Reduced to 2rem as requested */
     text-align: center;
     width: 100%;
 }
@@ -1364,10 +1375,12 @@ p.subtitle {
 
 .contact-title-section h1 {
     color: #1a1a1a;
+    font-size: 2rem; /* Set to 2rem as requested */
 }
 
 .contact-title-section .subtitle {
     color: #555555;
+    font-size: 1.5rem; /* Adjusted subtitle size */
 }
 
 .contact-info-section {
@@ -1408,6 +1421,7 @@ p.subtitle {
 
 .social-media-section h2 {
     margin-bottom: 30px;
+    font-size: 2rem; /* Set to 2rem as requested */
 }
 
 .social-links-container {

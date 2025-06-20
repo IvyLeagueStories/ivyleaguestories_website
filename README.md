@@ -12,8 +12,8 @@ This is the official website for Ivy League Stories, a tutoring business special
 - `style.css`: Contains all the styling for the website with responsive design.
 - `script.js`: Handles dynamic functionalities like the testimonial slider, FAQ dropdowns, and animations.
 - `images/`: Contains all website images including:
-    - `ivyleaguestories_circle.jpg`: The company logo used in the hero banner and navigation.
-    - `Michael_headshot.jpeg`: Professional headshot of the founder.
+    - `ivyleaguestories_circle.png`: The company logo used in the hero banner and navigation.
+    - `Michael_headshot.png`: Professional headshot of the founder.
     - `50successful.jpeg`: Book cover image.
     - `icons/`: SVG icons for social media links.
 
@@ -21,8 +21,8 @@ This is the official website for Ivy League Stories, a tutoring business special
 
 1. Clone this repository: `git clone https://github.com/TamiKabiawu007/ivyleaguestories.git`
 2. Ensure all images are in the `images/` folder including:
-   * `ivyleaguestories_circle.jpg` (company logo)
-   * `Michael_headshot.jpeg` (founder's headshot)
+   * `ivyleaguestories_circle.png` (company logo)
+   * `Michael_headshot.png` (founder's headshot)
    * `50successful.jpeg` (book cover image)
    * Social media icons in `images/icons/`
 3. Open `index.html` in your web browser to view the website locally.
