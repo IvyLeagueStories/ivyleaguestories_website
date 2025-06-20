@@ -67,6 +67,10 @@ p.subtitle {
     height: 70px;
 }
 
+.navbar.navbar--hidden {
+    top: -70px;
+}
+
 /* Navbar container full-width */
 .navbar .container {
     display: flex;
