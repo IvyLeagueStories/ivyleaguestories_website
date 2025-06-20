@@ -1,3 +1,7 @@
+:root {
+    --gold-color: #C0A459;
+}
+
 /* General Body Styles */
 body {
     margin: 0;
@@ -45,6 +49,11 @@ p.subtitle {
     font-family: 'Playfair Display', serif;
     color: #333333; /* Darker gray for subtitle */
     margin-bottom: 1em;
+}
+
+.hero-section .subtitle,
+.hero-cta-box .start-story-text {
+    color: var(--gold-color);
 }
 
 /* Navbar */
@@ -120,7 +129,7 @@ p.subtitle {
 
 .nav-links a:hover,
 .nav-links a.active {
-    color: #b0a060;
+    color: var(--gold-color);
 }
 
 /* Right side of navbar */
@@ -148,16 +157,17 @@ p.subtitle {
 }
 
 .btn-primary {
-    background-color: #b0a060; /* Gold */
-    color: #000000;
-    border: 1px solid #b0a060;
+    background-color: var(--gold-color);
+    color: #ffffff;
+    border: 1px solid var(--gold-color);
+    border-radius: 25px;
 }
 
 .btn-primary:hover,
 .btn-primary.active {
-    background-color: #000000; /* Black background */
-    color: #b0a060; /* Gold text */
-    border-color: #b0a060; /* Gold border */
+    background-color: #000000;
+    color: var(--gold-color);
+    border-color: var(--gold-color);
 }
 
 .btn-secondary {
@@ -358,48 +368,11 @@ p.subtitle {
     }
 }
 
-/* Mobile-specific sticky CTA */
-.mobile-cta-sticky {
-    display: none; /* hidden by default */
-    position: fixed;
-    bottom: 15px;
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: #C0A459;
-    color: #fff;
-    padding: 12px 25px;
-    border-radius: 30px;
-    text-decoration: none;
-    font-weight: 700;
-    font-size: 16px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
-    z-index: 1000;
-    text-align: center;
-    width: 80%;
-    max-width: 280px;
-    animation: pulse 2s infinite;
-}
 
-.desktop-only {
-    display: block;
-}
-
-@keyframes pulse {
-    0% { box-shadow: 0 4px 8px rgba(0,0,0,0.3); }
-    50% { box-shadow: 0 6px 12px rgba(0,0,0,0.5); }
-    100% { box-shadow: 0 4px 8px rgba(0,0,0,0.3); }
-}
 
 /* Extra small screens */
 @media (max-width: 480px) {
-    /* Show mobile CTA and hide desktop version */
-    .mobile-cta-sticky {
-        display: block;
-    }
-    
-    .desktop-only {
-        display: none;
-    }
+
     .hero-section {
          height: auto; /* allow full content */
          min-height: 450px;
