@@ -321,7 +321,7 @@ p.subtitle {
         padding: 20px 25px;
         width: 85%;
         max-width: 350px;
-        margin-bottom: 10px; /* reduce gap to CTA */
+        margin-bottom: 0; /* no gap */
     }
     
     .hero-section h1 {
@@ -348,25 +348,62 @@ p.subtitle {
     
     .hero-cta-box .btn {
         padding: 10px 20px;
-        font-size: 0.9rem;
     }
     
-    /* ensure equal vertical padding for hero content */
-    .hero-content {
-        padding: 80px 20px; /* equal top and bottom */
-        height: 100%;
-        box-sizing: border-box;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
+    .hero-cta-box .btn {
+        padding: 8px 15px;
+        font-size: 0.85rem;
+        width: 100%;
+        max-width: 200px;
     }
+}
+
+/* Mobile-specific sticky CTA */
+.mobile-cta-sticky {
+    display: none; /* hidden by default */
+    position: fixed;
+    bottom: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #C0A459;
+    color: #fff;
+    padding: 12px 25px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 16px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    z-index: 1000;
+    text-align: center;
+    width: 80%;
+    max-width: 280px;
+    animation: pulse 2s infinite;
+}
+
+.desktop-only {
+    display: block;
+}
+
+@keyframes pulse {
+    0% { box-shadow: 0 4px 8px rgba(0,0,0,0.3); }
+    50% { box-shadow: 0 6px 12px rgba(0,0,0,0.5); }
+    100% { box-shadow: 0 4px 8px rgba(0,0,0,0.3); }
 }
 
 /* Extra small screens */
 @media (max-width: 480px) {
+    /* Show mobile CTA and hide desktop version */
+    .mobile-cta-sticky {
+        display: block;
+    }
+    
+    .desktop-only {
+        display: none;
+    }
     .hero-section {
-        min-height: 450px;
+         height: auto; /* allow full content */
+         min-height: 450px;
+         overflow: visible; /* stop cropping CTA */
     }
     
     .hero-banner-image {
@@ -376,25 +413,25 @@ p.subtitle {
     }
     
     .hero-text-container {
-        padding: 15px 20px;
+        padding: 10px 15px;
         width: 90%;
         max-width: 300px;
     }
     
     .hero-section h1 {
-        font-size: 1.8rem;
+         font-size: 1.4rem; /* further reduced */
         margin-bottom: 5px;
         letter-spacing: 0.5px;
     }
     
     .hero-section p.subtitle {
-        font-size: 1rem;
+        font-size: 1.1rem;
     }
     
     .hero-cta-box {
-        padding: 12px 15px;
+        padding: 8px 15px 30px;
         width: 90%;
-        margin: 10px auto 0;
+        margin: 0 auto;
     }
     
     .hero-cta-box .start-story-text {
@@ -433,7 +470,7 @@ p.subtitle {
     }
     
     .hero-cta-box .start-story-text {
-        font-size: 1rem;
+        font-size: 1.1rem;
         margin-bottom: 5px;
     }
 }
@@ -450,7 +487,7 @@ p.subtitle {
     width: 90%;
     text-align: center;
     box-sizing: border-box;
-    margin-bottom: 25px;
+    margin-bottom: 5px; /* Reduced margin significantly */
 }
 
 .hero-section h1 {
