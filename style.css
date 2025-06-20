@@ -273,7 +273,7 @@ p.subtitle {
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
+    height: 100vh;
     object-fit: cover;
     object-position: center;
     box-sizing: border-box;
@@ -295,23 +295,32 @@ p.subtitle {
 /* Responsive adjustments for hero section */
 @media (max-width: 768px) {
     .hero-section {
-         position: relative;
-         height: 100vh; /* full viewport height */
-         min-height: 500px;
-         padding: 0;
-         overflow: hidden;
+        position: relative;
+        height: 100vh; /* full viewport height */
+        min-height: 100vh; /* Force full viewport height */
+        padding-top: 70px; /* space for navbar */
+        box-sizing: border-box;
+        overflow: hidden;
+        margin-top: 0; /* remove margin to avoid extra space */
+    }
+    
+    .hero-content {
+        transform: translateY(0); /* Reset any transform */
+        height: 100%;
+        padding: 70px 0 0; /* Add padding at top to account for navbar */
+        box-sizing: border-box;
     }
     
     .hero-banner-image {
-         position: absolute;
-         top: 0;
-         left: 0;
-         width: 100%;
-         height: 100%;
-         object-fit: cover; /* fill and crop sides */
-         object-position: center;
-         border: none;
-         z-index: 0;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh; /* Full viewport height */
+        object-fit: cover; /* fill and crop sides */
+        object-position: center; /* Center the image */
+        border: none;
+        z-index: 0;
     }
     
     .hero-section .container {
@@ -378,25 +387,38 @@ p.subtitle {
 @media (max-width: 480px) {
 
     .hero-section {
-         height: auto; /* allow full content */
-         min-height: 450px;
-         overflow: visible; /* stop cropping CTA */
+        height: 100vh; /* Full viewport height */
+        min-height: 100vh; /* Force full viewport height */
+        overflow: hidden; /* Contain everything */
+        padding-top: 70px; /* space for navbar */
+        box-sizing: border-box;
+        margin-top: 0; /* remove extra margin */
     }
     
     .hero-banner-image {
-        max-width: 100%;
-        max-height: 100%;
+        width: 100%;
+        height: 100%; /* Match container height */
+        object-fit: cover;
+        object-position: center; /* Center the image */
         border: none;
+    }
+    
+    .hero-content {
+        transform: translateY(0); /* Reset any transform */
+        height: 100%;
+        padding: 70px 15px 0; /* Add padding at top to account for navbar */
+        box-sizing: border-box;
     }
     
     .hero-text-container {
         padding: 10px 15px;
         width: 90%;
         max-width: 300px;
+        margin-bottom: 10px; /* Add space before CTA */
     }
     
     .hero-section h1 {
-         font-size: 1.4rem; /* further reduced */
+        font-size: 1.4rem; /* further reduced */
         margin-bottom: 5px;
         letter-spacing: 0.5px;
     }
@@ -406,7 +428,7 @@ p.subtitle {
     }
     
     .hero-cta-box {
-        padding: 8px 15px 30px;
+        padding: 8px 15px 20px;
         width: 90%;
         margin: 0 auto;
     }
@@ -481,8 +503,8 @@ p.subtitle {
 
 @media (max-width: 768px) {
     .hero-section {
-        height: auto; /* Allow height to adjust to content */
-        min-height: 500px; /* Slightly reduced minimum height */
+        height: 100vh; /* Full viewport height */
+        min-height: 100vh;
     }
     
     .hero-section h1 {
@@ -733,7 +755,7 @@ p.subtitle {
     max-width: 100%;
     height: auto;
     border-radius: 10px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    /* Shadow removed as requested */
     display: block;
     margin: 0 auto;
 }
@@ -744,11 +766,13 @@ p.subtitle {
 }
 
 .founder-image-book img {
-    max-width: 600px; /* Increased size */
+    max-width: 400px; /* Decreased size */
     width: 100%; /* Make it responsive */
     height: auto;
     border-radius: 10px;
     box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    display: block;
+    margin: 0 auto;
 }
 
 .intro-text a.btn {
@@ -855,7 +879,7 @@ p.subtitle {
     overflow-wrap: break-word;
     word-wrap: break-word;
     margin-bottom: 10px;
-    font-size: 1rem;
+    font-size: 1.2rem;
     line-height: 1.5;
     /* text-align will be inherited from .testimonial-card (center) by default */
 }
@@ -872,21 +896,21 @@ p.subtitle {
 }
 
 .testimonial-card p.accepted-to {
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     font-style: italic;
     color: #555;
     text-align: center; /* Center the 'Accepted to' line */
 }
 
 .testimonial-card p.accepted-to strong {
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     color: #333;
 }
 
 .testimonial-logo {
-    width: 300px; /* Even larger size */
+    width: 300px; /* Smaller size for circular logo */
     height: auto;
-    margin: 0 auto 20px auto; /* Center horizontally with auto margins */
+    margin: 0px auto 0 auto; /* Reduced bottom margin, added top margin */
     filter: grayscale(100%);
     transition: filter 0.3s ease;
     display: block; /* Needed for margin auto to work */
