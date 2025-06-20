@@ -4,6 +4,8 @@ document.addEventListener('DOMContentLoaded', function() {
     const navbar = document.querySelector('.navbar');
     const hamburgerMenu = document.querySelector('.hamburger-menu');
     const navLinks = document.querySelector('.nav-links');
+    const bookNowContainer = document.querySelector('.book-now-container');
+    const navbarRight = document.querySelector('.navbar-right');
 
     let lastScrollTop = 0;
     window.addEventListener('scroll', () => {
@@ -23,12 +25,39 @@ document.addEventListener('DOMContentLoaded', function() {
         lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; // For Mobile or negative scrolling
     });
 
+    // Handle mobile menu toggle
     if (hamburgerMenu) {
         hamburgerMenu.addEventListener('click', () => {
             navLinks.classList.toggle('active');
             hamburgerMenu.classList.toggle('active');
+            
+            // Move Book Now into dropdown when menu is active (mobile)
+            if (bookNowContainer) {
+                if (navLinks.classList.contains('active')) {
+                    navLinks.appendChild(bookNowContainer); // move inside dropdown
+                    bookNowContainer.classList.add('menu-active');
+                } else {
+                    // move back to navbar-right before hamburger
+                    navbarRight.insertBefore(bookNowContainer, hamburgerMenu);
+                    bookNowContainer.classList.remove('menu-active');
+                }
+            }
         });
     }
+    
+    // Close mobile menu when clicking outside
+    document.addEventListener('click', function(event) {
+        if (navLinks.classList.contains('active') && 
+            !event.target.closest('.navbar-left') && 
+            !event.target.closest('.navbar-right')) {
+            navLinks.classList.remove('active');
+            hamburgerMenu.classList.remove('active');
+            if (bookNowContainer) {
+                bookNowContainer.classList.remove('menu-active');
+            }
+        }
+    });
+
 
     // Testimonial Slider
     const testimonials = document.querySelectorAll('.testimonial-card');

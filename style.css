@@ -49,56 +49,65 @@ p.subtitle {
 
 /* Navbar */
 .navbar {
-    background-color: #000000; /* Start with a black background */
-    padding: 15px 0;
+    background-color: #000000;
     position: fixed;
     width: 100%;
     top: 0;
     z-index: 1000;
     transition: top 0.3s ease-in-out, background-color 0.3s ease;
+    height: 70px;
 }
 
-.navbar.navbar--hidden {
-    top: -100px; /* Moves the navbar out of view */
-}
-
+/* Navbar container full-width */
 .navbar .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 100%;
+    height: 100%;
+    width: 100%; /* ensure full width */
+    max-width: none;   /* override generic .container max-width */
+
+    padding: 0 20px;    /* fixed horizontal padding */
+    margin: 0;          /* override generic .container auto margins */
+    box-sizing: border-box;
+}
+
+/* Left side of navbar */
+.navbar-left {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    flex: 1;
+}
+
+.navbar-logo {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    padding-right: 20px;
 }
 
 .navbar-logo img {
-    max-height: 50px; /* Original logo size */
+    max-height: 50px;
     display: block;
-    filter: invert(0); /* Keep logo colors as is on black bg if needed, or adjust */
 }
 
-.nav-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    margin-left: 40px;
-}
-
+/* Navigation links */
 .nav-links {
     display: flex;
     list-style: none;
     margin: 0;
     padding: 0;
-    gap: 20px;
-    align-items: center; /* Ensure vertical centering */
+    height: 100%;
+    align-items: center;
 }
 
 .nav-links li {
-    margin-right: 25px;
-    margin-left: 0;
-}
-
-.book-now-container {
-    margin-left: auto; /* Push the Book Now button to the right */
+    margin: 0;
+    padding: 0 15px;
+    height: 100%;
+    display: flex;
+    align-items: center;
 }
 
 .nav-links a {
@@ -111,17 +120,31 @@ p.subtitle {
 
 .nav-links a:hover,
 .nav-links a.active {
-    color: #b0a060; /* Gold accent for hover/active */
+    color: #b0a060;
+}
+
+/* Right side of navbar */
+.navbar-right {
+    margin-left: auto; /* push to extreme right */
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+.book-now-container {
+    white-space: nowrap;
+    margin-right: 15px;
 }
 
 .btn {
-    padding: 8px 16px; /* Slightly smaller padding */
+    padding: 10px 20px; /* Increased padding */
     text-decoration: none;
     border-radius: 5px;
     font-weight: 700;
     transition: background-color 0.3s ease, color 0.3s ease;
     display: inline-block;
     line-height: 1.2; /* Tighter line height */
+    font-size: 1.2rem; /* Increased font size */
 }
 
 .btn-primary {
@@ -153,6 +176,7 @@ p.subtitle {
 .hamburger-menu {
     display: none;
     cursor: pointer;
+    margin-left: 15px;
 }
 
 .hamburger-menu span {
@@ -170,40 +194,48 @@ p.subtitle {
     height: 100vh;
     min-height: 600px;
     overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #000000; /* Black background */
-    background-image: linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,0,0,0.5));
     margin-top: 70px; /* Navbar height */
     padding: 0;
     width: 100%;
     text-align: center;
+    display: flex; /* Added to help with centering */
+    align-items: center;
+    justify-content: center;
+    background-color: #000; /* Add black background to prevent gray borders */
 }
 
-.hero-section .container {
+/* New hero content container */
+.hero-content {
     position: absolute;
     z-index: 2;
-    padding: 40px;
-    top: 40%; /* Move text up from center */
-    left: 50%;
-    transform: translate(-50%, -50%);
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     width: 100%;
-    max-width: 100%;
+    height: 100%;
     box-sizing: border-box;
+    padding: 0;
+    /* Adjust position to account for navbar height */
+    transform: translateY(35px);
 }
 
 .hero-banner-image {
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    max-width: 100%;
-    max-height: 100%;
-    border: none; /* Remove border */
-    box-sizing: border-box;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     object-fit: cover;
-    margin: 0 auto; /* Center horizontally */
+    object-position: center;
+    box-sizing: border-box;
+    margin: 0;
+    z-index: 0;
+    min-height: 100%;
 }
 
 .hero-overlay {
@@ -212,7 +244,7 @@ p.subtitle {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.25); /* Lighter semi-transparent black overlay (25% opacity) */
+    background-color: rgba(0, 0, 0, 0.15); /* Very light semi-transparent black overlay (15% opacity) */
     z-index: 1;
 }
 
@@ -371,64 +403,77 @@ p.subtitle {
 }
 
 .hero-text-container {
-    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black background */
-    padding: 25px 40px;
-    border-radius: 8px;
-    margin: 0 auto 25px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-    border-left: 0; /* Remove left border that was causing asymmetry */
-    border-bottom: 4px solid #b0a060; /* Move gold accent to bottom for symmetry */
-    max-width: 700px; /* Increase max width to accommodate the title on one line */
+    max-width: 900px; /* Increased max width to ensure title stays on one line */
     width: 90%;
     text-align: center;
     box-sizing: border-box;
+    margin-bottom: 25px;
 }
 
 .hero-section h1 {
     color: #ffffff; /* White text */
     font-weight: 700;
-    font-size: 3.2rem;
-    margin: 0 0 10px 0;
+    font-size: 4.4rem; /* Increased by 1/3 from 3.2rem */
+    margin: 0 0 15px 0;
     letter-spacing: 1px;
     text-transform: uppercase;
     font-family: 'Playfair Display', serif;
-    white-space: normal; /* Allow text to wrap on all screen sizes */
+    white-space: nowrap; /* Keep title on one line */
+    text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.9), 0 0 25px rgba(0, 0, 0, 0.7); /* Enhanced shadow for better emphasis */
+}
+
+@media (max-width: 768px) {
+    .hero-section {
+        height: auto; /* Allow height to adjust to content */
+        min-height: 500px; /* Slightly reduced minimum height */
+    }
+    
+    .hero-section h1 {
+        white-space: normal; /* Allow wrapping on smaller screens */
+        font-size: 3.5rem;
+    }
+    
+    .hero-content {
+        transform: translateY(0); /* Remove the transform on mobile */
+        padding: 80px 0; /* Add padding instead of fixed height */
+    }
 }
 
 .hero-section p.subtitle {
     color: #b0a060; /* Gold text */
-    font-weight: 400;
-    font-size: 1.4rem;
+    font-weight: 500; /* Slightly bolder */
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.9), 0 0 20px rgba(0, 0, 0, 0.7); /* Enhanced shadow for better readability */
+    font-size: 2.0rem; /* Increased by 1/3 from 1.4rem */
     margin: 0;
     letter-spacing: 0.5px;
     font-style: italic;
+    padding: 0 10px;
 }
 
 .hero-cta-box {
-    background-color: rgba(255, 255, 255, 0.9); /* Nearly opaque white background */
-    padding: 20px 35px;
-    border-radius: 8px;
     display: inline-block;
     margin-top: 20px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.25);
     transform: translateY(0);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: transform 0.3s ease;
+    text-align: center;
+    width: 90%;
+    max-width: 400px;
 }
 
 .hero-cta-box:hover {
     transform: translateY(-5px);
-    box-shadow: 0 15px 30px rgba(0,0,0,0.3);
 }
 
 .hero-cta-box .start-story-text {
-    font-size: 1.6rem;
+    font-size: 2.25rem; /* Increased by 1/3 from 1.6rem */
     font-weight: 700;
-    color: #000000;
+    color: #ffffff;
     margin: 0 0 15px 0;
     padding-top: 0;
     display: block;
     font-family: 'Playfair Display', serif;
     letter-spacing: 0.5px;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.9), 0 0 20px rgba(0, 0, 0, 0.7);
 }
 
 .hero-cta-box .btn {
@@ -1159,13 +1204,17 @@ p.subtitle {
     padding: 20px;
     background-color: #f9f9f9;
     border-radius: 8px;
+    max-width: 70%; /* reduced from 100% */
+    margin: 0 auto; /* center the container */
 }
 
 .about-image-feature img {
-    max-width: 100%;
+    max-width: 100%; /* reduced from 100% */
     height: auto;
     border-radius: 8px;
     box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    display: block;
+    margin: 0 auto; /* center the image */
 }
 
 /* Services Page Specific Styles */
@@ -1416,32 +1465,58 @@ p.subtitle {
 
 /* Responsive Design */
 @media (max-width: 768px) {
-    h1 {
-        font-size: 2.5rem;
+    .navbar-logo {
+        padding-right: 10px;
     }
-    p.subtitle {
-        font-size: 1.2rem;
-    }
+
     .nav-links {
         display: none;
         flex-direction: column;
         width: 100%;
         background-color: #000000;
         position: absolute;
-        top: 70px; /* Height of navbar */
+        top: 70px;
         left: 0;
         padding: 1em 0;
+        z-index: 999;
+        height: auto;
     }
+
     .nav-links.active {
         display: flex;
     }
+
     .nav-links li {
         margin: 10px 0;
         text-align: center;
+        width: 100%;
+        height: auto;
+        padding: 10px 0;
+        justify-content: center;
     }
+
     .hamburger-menu {
         display: block;
     }
+
+    .book-now-container.menu-active {
+        position: absolute;
+        top: auto;
+        bottom: 10px;
+        left: 0;
+        width: 100%;
+        text-align: center;
+        padding: 15px 0;
+        background-color: #000000;
+    }
+    /* ensure button text remains black over dark background */
+    .book-now-container.menu-active .btn-primary {
+        background-color: #b0a060;
+        color: #000000 !important;
+    }
+}
+
+@media (max-width: 768px) {
     .hamburger-menu.active span:nth-child(1) {
         transform: rotate(-45deg) translate(-5px, 6px);
     }
@@ -1450,25 +1525,5 @@ p.subtitle {
     }
     .hamburger-menu.active span:nth-child(3) {
         transform: rotate(45deg) translate(-5px, -6px);
-    }
-    .content-split {
-        flex-direction: column;
-        text-align: center;
-    }
-    .intro-logo img {
-        margin-bottom: 20px;
-    }
-    .slider-btn {
-        padding: 8px 12px;
-        font-size: 1.2rem;
-    }
-    .prev-btn {
-        left: 5px;
-    }
-    .next-btn {
-        right: 5px;
-    }
-    .testimonial-slider {
-        padding: 20px;
     }
 }
