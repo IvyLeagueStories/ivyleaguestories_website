@@ -1328,7 +1328,7 @@ p.subtitle {
 .about-hero-image {
     display: block; /* To allow margin auto for centering */
     width: 100%; /* Let the image define its own width so the container wraps tightly */
-    max-width: 50%; /* Reduced from 90% to make image smaller */
+    max-width: 35%; /* Reduced from 90% to make image smaller */
     height: auto;
     border-radius: 15px; /* Rounded rectangle, consistent with founder section on home */
     /* Removing border and shadow to ensure transparent PNG blends with background */
@@ -1350,7 +1350,7 @@ p.subtitle {
 
 
 .about-hero-section h1 {
-    font-size: 2.8rem;
+    font-size: 2.5rem;
     color: #000000;
     text-align: center;
     margin: 0; /* Remove all margins */
@@ -1363,7 +1363,7 @@ p.subtitle {
 }
 
 .about-text p {
-    font-size: 1.4rem;
+    font-size: 1.1rem;
     line-height: 1.7;
     margin-bottom: 1.5em;
     color: #333333;
@@ -1381,7 +1381,7 @@ p.subtitle {
     padding: 20px;
     background-color: #f9f9f9;
     border-radius: 8px;
-    max-width: 50%; /* reduced from 70% to make image smaller */
+    max-width: 40%; /* reduced from 70% to make image smaller */
     margin: 0 auto; /* center the container */
 }
 
