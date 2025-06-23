@@ -1249,7 +1249,7 @@ p.subtitle {
 
 /* About Page Specific Styles */
 .about-hero-section {
-    padding: 40px 20px; /* Adjusted padding to accommodate larger image */
+    padding: 20px; /* Removed bottom padding */
     margin-top: 70px; /* Navbar height */
     background-color: #f8f8f8; /* Light gray, consistent with home hero */
 }
@@ -1257,7 +1257,7 @@ p.subtitle {
 .about-hero-image {
     display: block; /* To allow margin auto for centering */
     width: 100%; /* Let the image define its own width so the container wraps tightly */
-    max-width: 90%; /* Span most of the width */
+    max-width: 60%; /* Reduced from 90% to make image smaller */
     height: auto;
     border-radius: 15px; /* Rounded rectangle, consistent with founder section on home */
     /* Removing border and shadow to ensure transparent PNG blends with background */
@@ -1265,7 +1265,6 @@ p.subtitle {
     box-shadow: none;
     margin-left: auto;
     margin-right: auto;
-    margin-bottom: 20px;
 }
 
 /* Ensure the about hero container shrinks to fit the image and centers its content */
@@ -1274,7 +1273,6 @@ p.subtitle {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 10px 0; /* add desired top and bottom spacing */
 }
 
 
@@ -1282,15 +1280,16 @@ p.subtitle {
     font-size: 2.8rem;
     color: #000000;
     text-align: center;
+    margin-bottom: 0;
 }
 
 .about-content-section {
-    padding: 50px 0;
+    padding: 20px 0;
     background-color: #ffffff;
 }
 
 .about-text p {
-    font-size: 1.1rem;
+    font-size: 1.4rem;
     line-height: 1.7;
     margin-bottom: 1.5em;
     color: #333333;
@@ -1308,7 +1307,7 @@ p.subtitle {
     padding: 20px;
     background-color: #f9f9f9;
     border-radius: 8px;
-    max-width: 70%; /* reduced from 100% */
+    max-width: 60%; /* reduced from 70% to make image smaller */
     margin: 0 auto; /* center the container */
 }
 
@@ -1587,6 +1586,8 @@ p.subtitle {
         padding: 1em 0;
         z-index: 999;
         height: auto;
+        max-height: calc(100vh - 70px);
+        overflow-y: auto;
     }
 
     .nav-links.active {
@@ -1606,15 +1607,19 @@ p.subtitle {
         display: block;
     }
 
-    .book-now-container.menu-active {
-        position: absolute;
-        top: auto;
-        bottom: 10px;
-        left: 0;
+    .book-now-nav-item {
         width: 100%;
         text-align: center;
-        padding: 15px 0;
-        background-color: #000000;
+        margin: 10px 0;
+        padding: 10px 0;
+    }
+
+    .book-now-container.menu-active {
+        position: relative;
+        width: 100%;
+        text-align: center;
+        padding: 5px 0;
+        background-color: transparent;
     }
     /* ensure button text remains black over dark background */
     .book-now-container.menu-active .btn-primary {

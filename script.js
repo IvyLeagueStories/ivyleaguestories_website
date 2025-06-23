@@ -34,10 +34,18 @@ document.addEventListener('DOMContentLoaded', function() {
             // Move Book Now into dropdown when menu is active (mobile)
             if (bookNowContainer) {
                 if (navLinks.classList.contains('active')) {
-                    navLinks.appendChild(bookNowContainer); // move inside dropdown
+                    // Make sure to append after all navigation links
+                    const navContainer = document.createElement('li');
+                    navContainer.className = 'book-now-nav-item';
+                    navContainer.appendChild(bookNowContainer);
+                    navLinks.appendChild(navContainer); // move inside dropdown as a list item
                     bookNowContainer.classList.add('menu-active');
                 } else {
                     // move back to navbar-right before hamburger
+                    const bookNowNavItem = document.querySelector('.book-now-nav-item');
+                    if (bookNowNavItem) {
+                        bookNowNavItem.remove(); // Remove the container li element
+                    }
                     navbarRight.insertBefore(bookNowContainer, hamburgerMenu);
                     bookNowContainer.classList.remove('menu-active');
                 }
@@ -52,7 +60,14 @@ document.addEventListener('DOMContentLoaded', function() {
             !event.target.closest('.navbar-right')) {
             navLinks.classList.remove('active');
             hamburgerMenu.classList.remove('active');
+            
+            // Handle book now container when closing menu
             if (bookNowContainer) {
+                const bookNowNavItem = document.querySelector('.book-now-nav-item');
+                if (bookNowNavItem) {
+                    bookNowNavItem.remove(); // Remove the container li element
+                }
+                navbarRight.insertBefore(bookNowContainer, hamburgerMenu);
                 bookNowContainer.classList.remove('menu-active');
             }
         }
