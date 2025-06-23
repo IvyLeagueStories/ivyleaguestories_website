@@ -1371,6 +1371,8 @@ p.subtitle {
     margin-bottom: 25px;
     box-shadow: 0 5px 15px rgba(0,0,0,0.07);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    min-height: 160px;
+    position: relative;
 }
 
 .service-item:hover {
@@ -1397,6 +1399,29 @@ p.subtitle {
     font-weight: bold;
     color: #000000;
     text-align: right;
+}
+
+.service-select-btn {
+    display: block;
+    font-size: 1.3rem;
+    font-weight: bold;
+    background-color: #000000;
+    color: #ffffff;
+    padding: 8px 16px;
+    border-radius: 10px;
+    text-decoration: none;
+    text-align: center;
+    transition: all 0.3s ease;
+    border: 1px solid #000000;
+    position: absolute;
+    bottom: 23px;
+    right: 23px;
+}
+
+.service-select-btn:hover {
+    background-color: var(--gold-color);
+    color: #000000;
+    border-color: var(--gold-color);
 }
 
 .cta-section {
