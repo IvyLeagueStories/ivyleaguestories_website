@@ -1394,6 +1394,27 @@ p.subtitle {
     margin: 0 auto; /* center the image */
 }
 
+/* About Page Mobile Styles */
+@media (max-width: 768px) {
+    .about-hero-image {
+        max-width: 85%;
+    }
+    
+    .about-image-feature {
+        max-width: 85%;
+    }
+}
+
+@media (max-width: 480px) {
+    .about-hero-image {
+        max-width: 90%;
+    }
+    
+    .about-image-feature {
+        max-width: 90%;
+    }
+}
+
 /* Services Page Specific Styles */
 .page-title-section {
     padding: 60px 0;
