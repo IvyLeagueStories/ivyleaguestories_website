@@ -145,7 +145,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 observer.unobserve(entry.target); // Optional: stop observing once animated
             }
         });
-    }, { threshold: 0.1 }); // Trigger when 10% of the element is visible
+    }, { threshold: 0.05, rootMargin: '0px 0px -100px 0px' }); // Trigger when 5% of the element is visible and 100px before it enters viewport
 
     animatedElements.forEach(el => {
         observer.observe(el);

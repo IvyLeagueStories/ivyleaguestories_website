@@ -558,6 +558,7 @@ p.subtitle {
 .hero-cta-box .btn {
     display: block;
     margin: 0 auto;
+    text-shadow: -1px -1px 0 rgba(0,0,0,0.3), 1px -1px 0 rgba(0,0,0,0.3), -1px 1px 0 rgba(0,0,0,0.3), 1px 1px 0 rgba(0,0,0,0.3);
 }
 
 /* Intro Section */
@@ -1229,6 +1230,76 @@ p.subtitle {
     display: flex;
     gap: 15px;
     justify-content: center; /* Center icons */
+}
+
+.animate-on-scroll:not(.hero-section) {
+    opacity: 0;
+    transition: all 1.2s ease-in-out;
+}
+
+/* Default fade-in animation */
+.animate-on-scroll:not(.hero-section).visible {
+    opacity: 1;
+}
+
+/* Hero section is always visible */
+.hero-section.animate-on-scroll {
+    opacity: 1;
+}
+
+/* Mission section animation - fade in */
+#intro.animate-on-scroll {
+    opacity: 0;
+    transform: translateY(40px);
+}
+
+#intro.animate-on-scroll.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* About section animation - slide in from left */
+#about-full.animate-on-scroll {
+    opacity: 0;
+    transform: translateX(-65px);
+}
+
+#about-full.animate-on-scroll.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* Services section animation - slide in from right */
+#services-preview.animate-on-scroll {
+    opacity: 0;
+    transform: translateX(65px);
+}
+
+#services-preview.animate-on-scroll.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* Testimonials section animation - fade in up */
+#testimonials.animate-on-scroll {
+    opacity: 0;
+    transform: translateY(50px);
+}
+
+#testimonials.animate-on-scroll.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* FAQ section animation - scale in */
+#faq.animate-on-scroll {
+    opacity: 0;
+    transform: scale(0.90);
+}
+
+#faq.animate-on-scroll.visible {
+    opacity: 1;
+    transform: scale(1);
 }
 
 .social-icons a img {
