@@ -1732,6 +1732,8 @@ p.subtitle {
         text-align: center;
         margin: 10px 0;
         padding: 10px 0;
+        display: flex;
+        justify-content: center;
     }
 
     .book-now-container.menu-active {
@@ -1739,7 +1741,10 @@ p.subtitle {
         width: 100%;
         text-align: center;
         padding: 5px 0;
+        margin: 0;
         background-color: transparent;
+        display: flex;
+        justify-content: center;
     }
     /* ensure button text remains black over dark background */
     .book-now-container.menu-active .btn-primary {
